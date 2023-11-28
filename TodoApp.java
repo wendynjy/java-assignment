@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// Interface for CRUD operations
 interface CRUDOperations {
     void create();
     void read();
@@ -24,7 +23,7 @@ public class TodoApp {
             System.out.println("0. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -47,7 +46,7 @@ public class TodoApp {
                     String newTaskName = scanner.nextLine();
                     System.out.println("Enter new due time (as a double):");
                     double newDueTime = scanner.nextDouble();
-                    scanner.nextLine(); // Consume the newline character
+                    scanner.nextLine(); 
                     todoList.updateTask(oldTaskName, newTaskName, newDueTime);
                     break;
 

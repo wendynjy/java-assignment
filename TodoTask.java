@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
+interface TaskOperations {
+    void displayDetails();
+}
+
 // Class representing a TodoTask
-class TodoTask implements CRUDOperations {
+class TodoTask implements CRUDOperations, TaskOperations {
     private String taskName;
     private boolean isCompleted;
     private double dueTime;
@@ -10,7 +14,7 @@ class TodoTask implements CRUDOperations {
     public TodoTask(String taskName) {
         this.taskName = taskName;
         this.isCompleted = false;
-        this.dueTime = 0.0;
+        this.dueTime = 0.00;
     }
 
     // Getter for taskName
@@ -41,6 +45,12 @@ class TodoTask implements CRUDOperations {
     // Setter for dueTime
     public void setDueTime(double dueTime) {
         this.dueTime = dueTime;
+    }
+
+    // Implement TaskOperations interface method
+    @Override
+    public void displayDetails() {
+        System.out.println("Task: " + taskName + " | Due Time: " + dueTime + " | Completed: " + isCompleted);
     }
 
     // Implement CRUD operations
