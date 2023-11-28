@@ -50,8 +50,9 @@ public class TodoApp {
 
                 case 4:
                     // Delete Task
-                    // TODO: Implement delete task functionality
-                    System.out.println("Delete Task - Not implemented yet.");
+                    System.out.println("Enter task name to delete:");
+                    String taskToDelete = scanner.nextLine();
+                    todoList.deleteTask(taskToDelete);
                     break;
 
                 case 5:

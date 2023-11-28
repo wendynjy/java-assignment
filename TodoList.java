@@ -51,7 +51,21 @@ class TodoList {
         System.out.println("Task not found: " + taskName);
     }
 
-    public void deleteTask() {
-        
+    public void deleteTask(String taskName) {
+    for (int i = 0; i < taskCount; i++) {
+        if (tasks[i].getTaskName().equalsIgnoreCase(taskName)) {
+            // Shift elements to the left to remove the task
+            for (int j = i; j < taskCount - 1; j++) {
+                tasks[j] = tasks[j + 1];
+            }
+            // Set the last element to null and decrement the taskCount
+            tasks[taskCount - 1] = null;
+            taskCount--;
+            System.out.println("Task deleted: " + taskName);
+            return;
+        }
     }
+    System.out.println("Task not found: " + taskName);
+    }
+
 }
