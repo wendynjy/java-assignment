@@ -45,10 +45,10 @@ public class TodoApp {
                     String oldTaskName = scanner.nextLine();
                     System.out.println("Enter new task name:");
                     String newTaskName = scanner.nextLine();
-                    System.out.println("Enter new due date (as a double):");
-                    double newDueDate = scanner.nextDouble();
+                    System.out.println("Enter new due time (as a double):");
+                    double newDueTime = scanner.nextDouble();
                     scanner.nextLine(); // Consume the newline character
-                    todoList.updateTask(oldTaskName, newTaskName, newDueDate);
+                    todoList.updateTask(oldTaskName, newTaskName, newDueTime);
                     break;
 
                 case 4:

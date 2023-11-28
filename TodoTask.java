@@ -4,13 +4,13 @@ import java.util.Scanner;
 class TodoTask implements CRUDOperations {
     private String taskName;
     private boolean isCompleted;
-    private double dueDate;
+    private double dueTime;
 
     // Constructor
     public TodoTask(String taskName) {
         this.taskName = taskName;
         this.isCompleted = false;
-        this.dueDate = 0.0;
+        this.dueTime = 0.0;
     }
 
     // Getter for taskName
@@ -33,14 +33,14 @@ class TodoTask implements CRUDOperations {
         isCompleted = completed;
     }
 
-    // Getter for dueDate
-    public double getDueDate() {
-        return dueDate;
+    // Getter for dueTime
+    public double getDueTime() {
+        return dueTime;
     }
 
-    // Setter for dueDate
-    public void setDueDate(double dueDate) {
-        this.dueDate = dueDate;
+    // Setter for dueTime
+    public void setDueTime(double dueTime) {
+        this.dueTime = dueTime;
     }
 
     // Implement CRUD operations
@@ -49,14 +49,14 @@ class TodoTask implements CRUDOperations {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter task name:");
         this.taskName = scanner.nextLine();
-        System.out.println("Enter due date (as a double):");
-        this.dueDate = scanner.nextDouble();
-        System.out.println("Task created: " + this.taskName + " | Due Date: " + this.dueDate);
+        System.out.println("Enter due time (as a double):");
+        this.dueTime = scanner.nextDouble();
+        System.out.println("Task created: " + this.taskName + " | Due Time: " + this.dueTime);
     }
 
     @Override
     public void read() {
-        System.out.println("Task: " + taskName + " | Due Date: " + dueDate + " | Completed: " + isCompleted);
+        System.out.println("Task: " + taskName + " | Due Time: " + dueTime + " | Completed: " + isCompleted);
     }
 
     @Override
@@ -64,9 +64,9 @@ class TodoTask implements CRUDOperations {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter new task name:");
         this.taskName = scanner.nextLine();
-        System.out.println("Enter new due date (as a double):");
-        this.dueDate = scanner.nextDouble();
-        System.out.println("Task updated: " + this.taskName + " | Due Date: " + this.dueDate);
+        System.out.println("Enter new due time (as a double):");
+        this.dueTime = scanner.nextDouble();
+        System.out.println("Task updated: " + this.taskName + " | Due Time: " + this.dueTime);
     }
 
     @Override
