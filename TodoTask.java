@@ -16,6 +16,11 @@ class TodoTask implements CRUDOperations {
         return taskName;
     }
 
+    // Setter for taskName
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
     // Getter for isCompleted
     public boolean isCompleted() {
         return isCompleted;

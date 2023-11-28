@@ -9,7 +9,6 @@ class TodoList {
         this.taskCount = 0;
     }
 
-    // Add a task to the list
     public void addTask(TodoTask task) {
         if (taskCount < MAX_TASKS) {
             tasks[taskCount++] = task;
@@ -19,7 +18,6 @@ class TodoList {
         }
     }
 
-    // Display all tasks in the list
     public void displayTasks() {
         if (taskCount == 0) {
             System.out.println("Task list is empty.");
@@ -31,7 +29,6 @@ class TodoList {
         }
     }
 
-    // Update a task name
     public void updateTask(String oldTaskName, String newTaskName) {
         for (int i = 0; i < taskCount; i++) {
             if (tasks[i].getTaskName().equalsIgnoreCase(oldTaskName)) {
@@ -43,7 +40,6 @@ class TodoList {
         System.out.println("Task not found: " + oldTaskName);
     }
 
-    // Mark a task as completed
     public void markTaskAsCompleted(String taskName) {
         for (int i = 0; i < taskCount; i++) {
             if (tasks[i].getTaskName().equalsIgnoreCase(taskName)) {
@@ -53,5 +49,9 @@ class TodoList {
             }
         }
         System.out.println("Task not found: " + taskName);
+    }
+
+    public void deleteTask() {
+        
     }
 }
