@@ -31,6 +31,18 @@ class TodoList {
         }
     }
 
+    // Update a task name
+    public void updateTask(String oldTaskName, String newTaskName) {
+        for (int i = 0; i < taskCount; i++) {
+            if (tasks[i].getTaskName().equalsIgnoreCase(oldTaskName)) {
+                tasks[i].setTaskName(newTaskName);
+                System.out.println("Task name updated from '" + oldTaskName + "' to '" + newTaskName + "'.");
+                return;
+            }
+        }
+        System.out.println("Task not found: " + oldTaskName);
+    }
+
     // Mark a task as completed
     public void markTaskAsCompleted(String taskName) {
         for (int i = 0; i < taskCount; i++) {

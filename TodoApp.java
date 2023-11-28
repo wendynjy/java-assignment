@@ -42,8 +42,10 @@ public class TodoApp {
                 case 3:
                     // Update Task
                     System.out.println("Enter task name to update:");
-                    String taskToUpdate = scanner.nextLine();
-                    todoList.markTaskAsCompleted(taskToUpdate);
+                    String oldTaskName = scanner.nextLine();
+                    System.out.println("Enter new task name:");
+                    String newTaskName = scanner.nextLine();
+                    todoList.updateTask(oldTaskName, newTaskName);
                     break;
 
                 case 4:
@@ -54,8 +56,9 @@ public class TodoApp {
 
                 case 5:
                     // Mark Task as Completed
-                    // TODO: Implement mark task as completed functionality
-                    System.out.println("Mark Task as Completed - Not implemented yet.");
+                    System.out.println("Enter task name to mark as completed:");
+                    String taskToComplete = scanner.nextLine();
+                    todoList.markTaskAsCompleted(taskToComplete);
                     break;
 
                 case 0:
