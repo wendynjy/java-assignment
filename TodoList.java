@@ -29,11 +29,12 @@ class TodoList {
         }
     }
 
-    public void updateTask(String oldTaskName, String newTaskName) {
+   public void updateTask(String oldTaskName, String newTaskName, double newDueDate) {
         for (int i = 0; i < taskCount; i++) {
-            if (tasks[i].getTaskName().equalsIgnoreCase(oldTaskName)) {
+            if (tasks[i] != null && tasks[i].getTaskName().equalsIgnoreCase(oldTaskName)) {
                 tasks[i].setTaskName(newTaskName);
-                System.out.println("Task name updated from '" + oldTaskName + "' to '" + newTaskName + "'.");
+                ((TodoTask) tasks[i]).setDueDate(newDueDate); // Update due date
+                System.out.println("Task updated: " + newTaskName + " | Due Date: " + newDueDate);
                 return;
             }
         }
