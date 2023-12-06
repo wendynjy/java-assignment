@@ -8,13 +8,13 @@ interface TaskOperations {
 class TodoTask implements CRUDOperations, TaskOperations {
     private String taskName;
     private boolean isCompleted;
-    private double dueTime;
+    private double allowance;
 
     // Constructor
     public TodoTask(String taskName) {
         this.taskName = taskName;
         this.isCompleted = false;
-        this.dueTime = 0.00;
+        this.allowance = 0.00;
     }
 
     // Getter for taskName
@@ -37,20 +37,20 @@ class TodoTask implements CRUDOperations, TaskOperations {
         isCompleted = completed;
     }
 
-    // Getter for dueTime
-    public double getDueTime() {
-        return dueTime;
+    // Getter for allowance
+    public double getAllowance() {
+        return allowance;
     }
 
-    // Setter for dueTime
-    public void setDueTime(double dueTime) {
-        this.dueTime = dueTime;
+    // Setter for allowance
+    public void setAllowance(double allowance) {
+        this.allowance = allowance;
     }
 
     // Implement TaskOperations interface method
     @Override
     public void displayDetails() {
-        System.out.println("Task: " + taskName + " | Due Time: " + dueTime + " | Completed: " + isCompleted);
+        System.out.println("Task: " + taskName + " | Allowance for completing: " + allowance + " | Completed: " + isCompleted);
     }
 
     // Implement CRUD operations
@@ -59,14 +59,14 @@ class TodoTask implements CRUDOperations, TaskOperations {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter task name:");
         this.taskName = scanner.nextLine();
-        System.out.println("Enter due time (as a double):");
-        this.dueTime = scanner.nextDouble();
-        System.out.println("Task created: " + this.taskName + " | Due Time: " + this.dueTime);
+        System.out.println("Enter allowance for completion:");
+        this.allowance = scanner.nextDouble();
+        System.out.println("Task created: " + this.taskName + " | Allowance for completing: " + this.allowance);
     }
 
     @Override
     public void read() {
-        System.out.println("Task: " + taskName + " | Due Time: " + dueTime + " | Completed: " + isCompleted);
+        System.out.println("Task: " + taskName + " | Allowance for completing: " + allowance + " | Completed: " + isCompleted);
     }
 
     @Override
@@ -74,9 +74,9 @@ class TodoTask implements CRUDOperations, TaskOperations {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter new task name:");
         this.taskName = scanner.nextLine();
-        System.out.println("Enter new due time (as a double):");
-        this.dueTime = scanner.nextDouble();
-        System.out.println("Task updated: " + this.taskName + " | Due Time: " + this.dueTime);
+        System.out.println("Enter new allowance for completion:");
+        this.allowance = scanner.nextDouble();
+        System.out.println("Task updated: " + this.taskName + " | Allowance for completing: " + this.allowance);
     }
 
     @Override
