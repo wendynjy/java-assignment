@@ -5,7 +5,7 @@ interface TaskOperations {
 }
 
 // Class representing a TodoTask
-class TodoTask implements CRUDOperations, TaskOperations {
+class TodoTask extends TodoList implements CRUDOperations, TaskOperations {
     private String taskName;
     private boolean isCompleted;
     private double allowance;
@@ -13,6 +13,12 @@ class TodoTask implements CRUDOperations, TaskOperations {
     // Constructor
     public TodoTask(String taskName) {
         this.taskName = taskName;
+        this.isCompleted = false;
+        this.allowance = 0.00;
+    }
+
+    public TodoTask() {
+        this.taskName = "";
         this.isCompleted = false;
         this.allowance = 0.00;
     }
